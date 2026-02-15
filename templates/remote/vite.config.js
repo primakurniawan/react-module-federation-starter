@@ -5,6 +5,7 @@ import { federation } from '@module-federation/vite';
 export default defineConfig({
   server: {
     port: 3001,
+    strictPort: true,
     cors: true,
     origin: `http://localhost:${process.env.PORT || 3001}`
   },

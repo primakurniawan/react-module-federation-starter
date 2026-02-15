@@ -3,9 +3,12 @@
     "remote": {
       "type": "module",
       "name": "remote",
-      "entry": "http://localhost:3002/remoteEntry.js",
+      "entry": "http://localhost:3001/remoteEntry.js",
       "entryGlobalName": "remote",
       "shareScope": "default"
     }
+  },
+  "remoteStyles": {
+    "remote": "http://localhost:3001/src/styles.css"
   }
 }
