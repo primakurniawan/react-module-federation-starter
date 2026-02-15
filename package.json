@@ -1,0 +1,8 @@
+{
+  "name": "create-react-mf-starter",
+  "version": "1.0.0",
+  "bin": {
+    "create-react-mf-starter": "./bin/index.js"
+  },
+  "type": "module"
+}
