@@ -23,7 +23,7 @@ function help() {
   console.log('mf CLI - manage remotes in mf.config.json');
   console.log('Usage: mf <command> [args]');
   console.log('Commands:');
-  console.log('  add <name> [url]      Add a remote (default url http://localhost:3001/assets/remoteEntry.js)');
+  console.log('  add <name> [url]      Add a remote (default url http://localhost:3001/remoteEntry.js)');
   console.log('  remove <name>         Remove a remote');
   console.log('  rename <old> <new>    Rename a remote key');
   console.log('  move <name> <url>     Change the URL for a remote');
@@ -47,7 +47,7 @@ if (action === 'list') {
 
 if (action === 'add') {
   const name = args[1];
-  const url = args[2] || 'http://localhost:3001/assets/remoteEntry.js';
+  const url = args[2] || 'http://localhost:3001/remoteEntry.js';
   if (!name) {
     console.error('Please provide a name: mf add <name> [url]');
     process.exit(1);

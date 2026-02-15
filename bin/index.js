@@ -3,6 +3,10 @@
 import fs from "fs";
 import path from "path";
 import { execSync } from "child_process";
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const appName = process.argv[2];
 
@@ -20,19 +24,24 @@ fs.mkdirSync(path.join(root, "apps"), { recursive: true });
 copyTemplate("host");
 copyTemplate("remote");
 
-// create mf.config.json
-fs.writeFileSync(
-  path.join(root, "mf.config.json"),
-  JSON.stringify(
-    {
-      remotes: {
-        remote: "http://localhost:3001/assets/remoteEntry.js"
-      }
-    },
-    null,
-    2
-  )
-);
+// create mf.config.json: prefer template if it exists, otherwise write a sensible default
+const templateMfConfig = path.resolve(__dirname, "..", "templates", "mf.config.json");
+if (fs.existsSync(templateMfConfig)) {
+  fs.copyFileSync(templateMfConfig, path.join(root, "mf.config.json"));
+} else {
+  fs.writeFileSync(
+    path.join(root, "mf.config.json"),
+    JSON.stringify(
+      {
+        remotes: {
+          remote: "http://localhost:3001/remoteEntry.js"
+        }
+      },
+      null,
+      2
+    )
+  );
+}
 
 // copy local CLI into generated project so users can run `npm run mf` there
 const localCli = path.resolve(__dirname, 'mf.js');

@@ -1,0 +1,11 @@
+{
+  "remotes": {
+    "remote": {
+      "type": "module",
+      "name": "remote",
+      "entry": "http://localhost:3002/remoteEntry.js",
+      "entryGlobalName": "remote",
+      "shareScope": "default"
+    }
+  }
+}
