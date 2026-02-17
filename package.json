@@ -1,8 +1,44 @@
 {
   "name": "create-react-mf-starter",
   "version": "1.0.0",
-  "bin": {
-    "create-react-mf-starter": "./bin/index.js"
+  "description": "Scaffold a React Module Federation monorepo with host and remote apps via npx",
+  "keywords": [
+    "react",
+    "module-federation",
+    "microfrontend",
+    "micro-frontend",
+    "webpack",
+    "scaffold",
+    "create",
+    "starter",
+    "monorepo"
+  ],
+  "homepage": "https://github.com/primakurniawan/react-module-federation-starter#readme",
+  "bugs": {
+    "url": "https://github.com/primakurniawan/react-module-federation-starter/issues"
   },
-  "type": "module"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/primakurniawan/react-module-federation-starter.git"
+  },
+  "license": "MIT",
+  "author": "primakurniawan",
+  "main": "bin/create.js",
+  "bin": {
+    "create-react-mf-starter": "bin/create.js"
+  },
+  "files": [
+    "bin",
+    "templates"
+  ],
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^11.0.0",
+    "fs-extra": "^11.1.1",
+    "inquirer": "^8.2.6",
+    "ora": "^5.4.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
 }
